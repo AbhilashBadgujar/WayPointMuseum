@@ -32,4 +32,8 @@ public class WPM_Waypoint : MonoBehaviour
     public Vector3 getWorldRotation(){
        return worldRotation;
    }
+
+   public int getWayPointNumebr(){
+       return waypointNumber;
+   }
 }

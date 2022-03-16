@@ -9,33 +9,58 @@ public class WPM_ViewerManager : WPM_Singleton<WPM_ViewerManager>
 {
 
 
+    [SerializeField] private bool isModelViewing = false;
+
+    [SerializeField] private GameObject modelToView;
+
+    [SerializeField] private int waypointSelected;
+
     private void Start()
     {
-        //RUpdate();
+        RUpdate();
+    }
+
+
+    public void SetToViewModel(GameObject _modelToView){
+        modelToView = _modelToView;
     }
 
     public void ChangeToWaypoint(WPM_Waypoint waypoint)
     {
-
+        waypointSelected = waypoint.getWayPointNumebr();
         transform.DOMove(waypoint.getWorldTransfrom(), 8f, false);
         transform.DORotate(waypoint.getWorldRotation(), 8f, RotateMode.Fast);
         //rotation = new Vector2(transform.rotation.y, transform.rotation.x);
     }
 
+    public int getWayPointSelected(){
+        return waypointSelected;
+    }
 
-    [SerializeField] Vector2 rotation;// = new Vector2(transform.rotation.y,transform.rotation.x);
-    public float speed = 3; //the sensibility
 
-    private  void Update()
+    public void SetIsModelViewBool(bool _val){
+        isModelViewing = _val;
+    }
+
+
+    private async void RUpdate()
     {
-        //while(true){
-        if (Input.GetMouseButton(0))
+        while (true)
         {
-             float h = 2f * Input.GetAxis("Mouse X");
-             float v = 0f * Input.GetAxis("Mouse Y");
-             transform.Rotate(v, h, 0);
+            if (Input.GetMouseButton(0))
+            {
+                float h = 2f * Input.GetAxis("Mouse X");
+                float v = 0f * Input.GetAxis("Mouse Y");
+                if (!isModelViewing)
+                {
+                    transform.Rotate(v, h, 0);
+                }
+                else
+                {
+                    modelToView.transform.Rotate(0,h,0);
+                }
+            }
+            await Task.Yield();
         }
-        //await Task.Yield();
-        //}
     }
 }
