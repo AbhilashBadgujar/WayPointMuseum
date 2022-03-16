@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 72496697808799429}
   - component: {fileID: 72496697808799428}
   - component: {fileID: 72496697808799431}
+  - component: {fileID: 72496696809707748}
   m_Layer: 0
   m_Name: Wapoint
   m_TagString: Untagged
@@ -26,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 72496697808799425}
-  m_LocalRotation: {x: 0.004743724, y: 0.9464531, z: -0.04474247, w: 0.3196908}
+  m_LocalRotation: {x: 0.0047444473, y: 0.94645375, z: -0.04474391, w: 0.31968865}
   m_LocalPosition: {x: 8.9, y: 1.38, z: -0.14}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.010000001, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -95,3 +96,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &72496696809707748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72496697808799425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abaccb701b3a273488b69d049ada471b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  worldTransfrom: {x: 9.2, y: 2.5, z: -0.5}
+  worldRotation: {x: 0, y: 146.5, z: 0}
+  waypointNumber: 0
